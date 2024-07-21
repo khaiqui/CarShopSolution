@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAO.Services;
+using DTO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,7 @@ namespace CarShop
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private DAO.Services.UserService userService = new();
         public LoginWindow()
         {
             InitializeComponent();
@@ -29,18 +32,46 @@ namespace CarShop
             string username = usernameTextBox.Text;
             string password = passwordBox.Password;
 
+            var user = userService.Authenticate(username, password);
+
+            if (user == null)
+            {
+                MessageBox.Show("The account is not exists", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            switch (user.Role)
+            {
+                case "Customer":
+                    // Customer Screen is MainWindow
+                    break;
+                case "Staff":
+                    // Staff Screen to manage product
+                    break;
+                case "Admin":
+                    // Admin Screen to manage Account
+                    break;
+            }
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            this.Hide();
+
             // Add your login logic here
-            MessageBox.Show($"Username: {username}\nPassword: {password}");
+            //MessageBox.Show($"Username: {username}\nPassword: {password}");
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            this.Hide();
         }
     }
 }
