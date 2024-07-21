@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using DTO.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,6 +17,8 @@ namespace CarShop
     /// </summary>
     public partial class MainWindow : Window
     {
+        public User User { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,5 +33,13 @@ namespace CarShop
 		{
 
 		}
-	}
+
+        private void GoToProductsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShopWindow shopWindow = new ShopWindow();
+            shopWindow.User = User;
+            shopWindow.Show();
+            this.Close();
+        }
+    }
 }

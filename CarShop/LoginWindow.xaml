@@ -23,7 +23,7 @@
             <TextBox Name="usernameTextBox" Margin="0,0,0,20"/>
 
             <TextBlock Text="Password" Margin="0,0,0,5"/>
-            <PasswordBox Name="passwordBox" Margin="0,0,0,20"/>
+            <PasswordBox Name="passwordBox" Margin="0,0,0,20" Height="29"/>
         </StackPanel>
         <Button Content="Login" Click="LoginButton_Click" Grid.Column="1" Margin="176,0,0,120" Grid.Row="2"/>
         <Button Content="Quit" Click="QuitButton_Click" Grid.Column="1" Margin="0,0,176,120" Grid.Row="2"/>

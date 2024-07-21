@@ -44,6 +44,9 @@ namespace CarShop
             {
                 case "Customer":
                     // Customer Screen is MainWindow
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.User = user;
+                    mainWindow.Show();
                     break;
                 case "Staff":
                     // Staff Screen to manage product
@@ -53,8 +56,7 @@ namespace CarShop
                     break;
             }
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            
 
             this.Hide();
 

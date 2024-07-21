@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="RegisterWindow" Height="511" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,2">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Width="300">
+        <StackPanel Grid.Column="1" Width="300" Margin="0,8,0,28" Grid.RowSpan="2">
             <TextBlock Text="Name" Margin="0,0,0,5"/>
             <TextBox Name="nameTextBox" Margin="0,0,0,20"/>
 
@@ -35,9 +35,9 @@
             <TextBox Name="usernameTextBox" Margin="0,0,0,20"/>
 
             <TextBlock Text="Password" Margin="0,0,0,5"/>
-            <PasswordBox Name="passwordBox" Margin="0,0,0,20"/>
+            <PasswordBox Name="passwordBox" Margin="0,0,0,20" Height="27"/>
         </StackPanel>
-        <Button Content="Register" Width="100" HorizontalAlignment="Left" Click="RegisterButton_Click" Grid.Column="1" Margin="174,350,0,14" Grid.Row="1"/>
-        <Button Content="Back to Login" Width="100" HorizontalAlignment="Left" Margin="31,350,0,14" Click="BackToLoginButton_Click" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.693,0.524"/>
+        <Button Content="Register" Width="113" HorizontalAlignment="Left" Click="RegisterButton_Click" Grid.Column="1" Margin="168,380,0,14" Grid.Row="1"/>
+        <Button Content="Back to Login" Width="135" HorizontalAlignment="Left" Margin="10,380,0,14" Click="BackToLoginButton_Click" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

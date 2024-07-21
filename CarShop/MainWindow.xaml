@@ -16,10 +16,7 @@
         <Button x:Name="ManageModelsButton" Content="Manage Models" HorizontalAlignment="Left" Height="50" Margin="983,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" Click="ManageModelsButton_Click" />
         <Button x:Name="ManageDiscountsButton" Content="Manage Discounts" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="247" TabIndex="5" Margin="685,234,0,0" />
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="91,407,0,0" VerticalAlignment="Top" Width="247" TabIndex="6" />
-        <Button x:Name="BuyProductsButton_Copy" Content="Buy" HorizontalAlignment="Left" Height="50" Margin="91,0,0,0" VerticalAlignment="Center" Width="247" TabIndex="4" />
-        <Button x:Name="ManageModelsButton_Copy" Content="Manage Orders" HorizontalAlignment="Left" Height="50" Margin="92,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" />
-
-
-
+        <Button x:Name="GoToProductsButton" Content="Product List" HorizontalAlignment="Left" Height="50" Margin="91,0,0,0" VerticalAlignment="Center" Width="247" TabIndex="4" Click="GoToProductsButton_Click" />
+        <Button x:Name="ManageOrderButton" Content="Manage Orders" HorizontalAlignment="Left" Height="50" Margin="92,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" />
     </Grid>
 </Window>
