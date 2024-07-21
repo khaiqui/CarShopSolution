@@ -21,10 +21,37 @@ namespace DTO.Repositories
 
         public void AddUser(User user)
         {
-            _context = new CarshopDbContext();
+            _context = new ();
             _context.Users.Add(user);
             _context.SaveChanges();
             return;
         }
-    }
+
+		public List<User> GetUser()
+		{
+			_context = new CarshopDbContext();
+
+			return _context.Users.ToList();
+		}
+
+		public void Update1(User x)
+		{
+			_context = new();
+			_context.Users.Update(x);
+			_context.SaveChanges();
+		}
+
+		public void Delete(User x)
+		{
+			_context = new();
+			_context.Users.Remove(x);
+			_context.SaveChanges();
+		}
+
+		public List<User> GetAll()
+		{
+			_context = new CarshopDbContext();
+			return _context.Users.ToList();
+		}
+	}
 }

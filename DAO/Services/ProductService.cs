@@ -30,6 +30,7 @@ namespace DAO.Services
 			_repo.Delete(product);
 		}
 
+<<<<<<< HEAD
         //search?
         public List<Product> SearchCarByNameAndQuantity(string name, int? quan)
         {
@@ -52,4 +53,17 @@ namespace DAO.Services
         }
 
     }
+=======
+		//search?
+		public List<Product> Search (string name, string desc, int? modelId)
+		{
+			name = name.ToLower();
+			desc = desc.ToLower();
+			return _repo.GetList().Where(
+				a => a.ProductName.ToLower().Contains(name) 
+				&& a.Description.ToLower().Contains(desc) 
+				&& (modelId != null || a.ModelId == modelId)).ToList();
+		}
+	}
+>>>>>>> 974f427ffe3d3414e88c4022d3d809082f58b434
 }
