@@ -19,7 +19,7 @@
         <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="White"/>
         <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="1064,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" Click="CreateButton_Click"/>
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="1064,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" />
         <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="1064,367,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" />
         <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="1064,444,0,0" VerticalAlignment="Top" Width="124" TabIndex="5" />
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1064,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" />

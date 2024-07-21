@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace DTO.Models;
 
@@ -31,25 +30,14 @@ public partial class CarshopDbContext : DbContext
     public virtual DbSet<UserService> UserServices { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-
-        => optionsBuilder.UseSqlServer(GetConnectionString());
-
-    private string GetConnectionString()
-    {
-        IConfiguration config = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", true, true)
-                    .Build();
-        var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
-
-        return strConn;
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=(local);Database=carshop_db;UID=sa;PWD=12345;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Discount>(entity =>
         {
-            entity.HasKey(e => e.DiscountId).HasName("PK__Discount__D2130A666C7E4785");
+            entity.HasKey(e => e.DiscountId).HasName("PK__Discount__D2130A66E1D2F8D8");
 
             entity.Property(e => e.DiscountId).HasColumnName("discountId");
             entity.Property(e => e.DiscountRate).HasColumnName("discountRate");
@@ -57,7 +45,7 @@ public partial class CarshopDbContext : DbContext
 
         modelBuilder.Entity<Model>(entity =>
         {
-            entity.HasKey(e => e.ModelId).HasName("PK__Models__0215CC594A336A65");
+            entity.HasKey(e => e.ModelId).HasName("PK__Models__0215CC59E3A531B9");
 
             entity.Property(e => e.ModelId).HasColumnName("modelId");
             entity.Property(e => e.ModelName)
@@ -68,7 +56,7 @@ public partial class CarshopDbContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => new { e.OrderId, e.ProductId }).HasName("PK__OrderDet__BAD83E6B1CE14F60");
+            entity.HasKey(e => new { e.OrderId, e.ProductId }).HasName("PK__OrderDet__BAD83E6B178CC607");
 
             entity.ToTable("OrderDetail");
 
@@ -82,17 +70,17 @@ public partial class CarshopDbContext : DbContext
             entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__OrderDeta__order__59063A47");
+                .HasConstraintName("FK__OrderDeta__order__59FA5E80");
 
             entity.HasOne(d => d.Product).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.ProductId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__OrderDeta__produ__59FA5E80");
+                .HasConstraintName("FK__OrderDeta__produ__5AEE82B9");
         });
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Products__2D10D16AE81288D2");
+            entity.HasKey(e => e.ProductId).HasName("PK__Products__2D10D16A6010B630");
 
             entity.Property(e => e.ProductId).HasColumnName("productId");
             entity.Property(e => e.Description).IsUnicode(false);
@@ -112,16 +100,16 @@ public partial class CarshopDbContext : DbContext
 
             entity.HasOne(d => d.Discount).WithMany(p => p.Products)
                 .HasForeignKey(d => d.DiscountId)
-                .HasConstraintName("FK__Products__discou__52593CB8");
+                .HasConstraintName("FK__Products__discou__534D60F1");
 
             entity.HasOne(d => d.Model).WithMany(p => p.Products)
                 .HasForeignKey(d => d.ModelId)
-                .HasConstraintName("FK__Products__modelI__5165187F");
+                .HasConstraintName("FK__Products__modelI__52593CB8");
         });
 
         modelBuilder.Entity<ProductOrder>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__ProductO__0809335D1044C441");
+            entity.HasKey(e => e.OrderId).HasName("PK__ProductO__0809335DA0C56E53");
 
             entity.ToTable("ProductOrder");
 
@@ -134,14 +122,14 @@ public partial class CarshopDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.ProductOrders)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__ProductOr__userI__5629CD9C");
+                .HasConstraintName("FK__ProductOr__userI__571DF1D5");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__CB9A1CFF2BF3D1F8");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__CB9A1CFF4025160B");
 
-            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC572AEAA7D3C").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__F3DBC5725D766B5F").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("userId");
             entity.Property(e => e.Address)
@@ -164,7 +152,8 @@ public partial class CarshopDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("phone");
             entity.Property(e => e.Role)
-                .HasDefaultValue(false)
+                .HasMaxLength(20)
+                .HasDefaultValue("Customer")
                 .HasColumnName("role");
             entity.Property(e => e.Username)
                 .HasMaxLength(100)
@@ -174,7 +163,7 @@ public partial class CarshopDbContext : DbContext
 
         modelBuilder.Entity<UserService>(entity =>
         {
-            entity.HasKey(e => e.ServiceId).HasName("PK__UserServ__455070DF954588B0");
+            entity.HasKey(e => e.ServiceId).HasName("PK__UserServ__455070DFF9AFCFDA");
 
             entity.Property(e => e.ServiceId).HasColumnName("serviceId");
             entity.Property(e => e.Date)
@@ -187,7 +176,7 @@ public partial class CarshopDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.UserServices)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__UserServi__userI__5DCAEF64");
+                .HasConstraintName("FK__UserServi__userI__5EBF139D");
         });
 
         OnModelCreatingPartial(modelBuilder);
