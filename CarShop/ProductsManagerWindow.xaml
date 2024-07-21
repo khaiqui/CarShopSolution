@@ -7,16 +7,11 @@
         mc:Ignorable="d"
                 Title="Product Window" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="586*"/>
-            <ColumnDefinition Width="679*"/>
-        </Grid.ColumnDefinitions>
 
-        <Label Content="Product Management" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" Grid.ColumnSpan="2" />
-        <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="12,40,0,0" VerticalAlignment="Top" Width="275" FontSize="30"  FontStyle="Italic" Grid.Column="1"/>
-        <Label x:Name="HelloMsgLabel" Content="Hello, Role" HorizontalAlignment="Left" Height="50" Margin="343,6,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" Style="{StaticResource YellowLabelStyle}" HorizontalContentAlignment="Right" Grid.Column="1"/>
+        <Label Content="Product Management" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" />
+        <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="598,40,0,0" VerticalAlignment="Top" Width="275" FontSize="30"  FontStyle="Italic"/>
+        <Label x:Name="HelloMsgLabel" Content="Hello, Role" HorizontalAlignment="Left" Height="50" Margin="929,6,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" Style="{StaticResource YellowLabelStyle}" HorizontalContentAlignment="Right"/>
 
-<<<<<<< HEAD
         <Rectangle HorizontalAlignment="Left" Height="95" Margin="335,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="875" Fill="#1e90ff " RadiusX="10" RadiusY="10" />
         <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left" Height="50" Margin="40,162,0,0" VerticalAlignment="Top" Width="262" TabIndex="2" Click="SearchButton_Click" />
         <Label Content="Car Name" HorizontalAlignment="Left" Height="45" Margin="389,170,0,0" VerticalAlignment="Top" Width="109" Foreground="White" RenderTransformOrigin="0.158,0.405"/>
@@ -30,21 +25,6 @@
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1064,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Click="QuitButton_Click" />
 
         <DataGrid x:Name="ProductDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" >
-=======
-        <Rectangle HorizontalAlignment="Left" Height="95" Margin="218,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="992" Fill="#1e90ff " RadiusX="10" RadiusY="10" Grid.ColumnSpan="2" />
-        <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left" Height="50" Margin="40,162,0,0" VerticalAlignment="Top" Width="154" TabIndex="2" Click="SearchButton_Click" />
-        <Label Content="Name" HorizontalAlignment="Left" Height="45" Margin="240,162,0,0" VerticalAlignment="Top" Width="152" Foreground="White" RenderTransformOrigin="0.158,0.405"/>
-        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="45" Margin="308,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="203" TabIndex="0" />
-        <Label Content="Description" HorizontalAlignment="Left" Height="45" Margin="548,162,0,0" VerticalAlignment="Top" Width="108" Foreground="White" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Height="45" Margin="75,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="235" TabIndex="1" Grid.Column="1"/>
-
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="478,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" Grid.Column="1" Click="CreateButton_Click" />
-        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="478,367,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" Grid.Column="1" Click="UpdateButton_Click" />
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="478,444,0,0" VerticalAlignment="Top" Width="124" TabIndex="5" Grid.Column="1" />
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="478,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Grid.Column="1" Click="QuitButton_Click" />
-
-        <DataGrid x:Name="ItemsDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" Grid.ColumnSpan="2" >
->>>>>>> 974f427ffe3d3414e88c4022d3d809082f58b434
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding ProductId}" />
                 <DataGridTextColumn Header="Name" Width="200" Binding="{Binding ProductName}" />
@@ -53,16 +33,11 @@
                 <DataGridTextColumn Header="Image" Width="100" Binding="{Binding Image}" />
 
                 <DataGridTextColumn Header="Description" Width="70" Binding="{Binding Description}" />
-<<<<<<< HEAD
-=======
-
->>>>>>> 974f427ffe3d3414e88c4022d3d809082f58b434
                 <DataGridTextColumn Header="Model" Width="100" Binding="{Binding Model.ModelName}" />
                 <DataGridTextColumn Header="Discount (%)" Width="80" Binding="{Binding Discount.DiscountRate}" />
 
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Model" HorizontalAlignment="Left" Height="45" Margin="328,162,0,0" VerticalAlignment="Top" Width="69" Foreground="White" Grid.Column="1"/>
-        <ComboBox x:Name="ModelIdComboBox" HorizontalAlignment="Left" Height="45" Margin="402,162,0,0" VerticalAlignment="Top" Width="197" TabIndex="7" FontWeight="Bold" FontSize="7" Grid.Column="1"/>
+
     </Grid>
 </Window>

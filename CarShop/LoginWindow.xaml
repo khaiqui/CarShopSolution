@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="LoginWindow" Height="450" Width="800" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" >
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -18,15 +19,17 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Width="300">
-            <TextBlock Text="Username" Margin="0,0,0,5"/>
-            <TextBox Name="usernameTextBox" Margin="0,0,0,20"/>
+        <StackPanel Grid.Column="1" Width="300" Margin="0,65,0,31" Grid.RowSpan="2">
+            <Label Content="Log in" Height="80" Width="300" FontWeight="Heavy" FontSize="50"  HorizontalContentAlignment="Center"/>
+            <TextBlock Text="Username" Margin="0,0,0,5" FontSize="18" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox x:Name="usernameTextBox" Margin="0,0,0,20" Height="33" FontSize="15"/>
 
-            <TextBlock Text="Password" Margin="0,0,0,5"/>
-            <PasswordBox Name="passwordBox" Margin="0,0,0,20"/>
+            <TextBlock Text="Password" Margin="0,0,0,5" FontSize="18" Foreground="Blue" FontWeight="Bold"/>
+            <PasswordBox x:Name="passwordBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
         </StackPanel>
-        <Button Content="Login" Click="LoginButton_Click" Grid.Column="1" Margin="176,0,0,120" Grid.Row="2"/>
-        <Button Content="Quit" Click="QuitButton_Click" Grid.Column="1" Margin="0,0,176,120" Grid.Row="2"/>
-        <Button Content="Register" Click="RegisterButton_Click" Grid.Column="1" Margin="176,60,0,60" Grid.Row="2"/>
+
+        <Button Content="Quit" Click="QuitButton_Click" Grid.Column="1" Margin="0,209,176,10" Grid.Row="1"/>
+        <Button Content="Login" Click="LoginButton_Click" Grid.Column="1" Margin="176,209,0,10" Grid.Row="1"/>
+        <Button Content="Register" Click="RegisterButton_Click" Grid.Column="2" Margin="101,30,25,10"/>
     </Grid>
 </Window>

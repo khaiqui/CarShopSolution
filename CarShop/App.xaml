@@ -2,11 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CarShop"
-<<<<<<< HEAD
+
              StartupUri="ProductsManagerWindow.xaml">
-=======
-             StartupUri="AccountManagerWindow.xaml">
->>>>>>> 974f427ffe3d3414e88c4022d3d809082f58b434
+
     <Application.Resources>
 
         <!-- Primary/ Default Button Style: Nền , Chữ  Crimson -->
