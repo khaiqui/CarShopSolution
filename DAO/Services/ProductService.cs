@@ -30,5 +30,14 @@ namespace DAO.Services
 		}
 
 		//search?
+		public List<Product> Search (string name, string desc, int? modelId)
+		{
+			name = name.ToLower();
+			desc = desc.ToLower();
+			return _repo.GetList().Where(
+				a => a.ProductName.ToLower().Contains(name) 
+				&& a.Description.ToLower().Contains(desc) 
+				&& (modelId != null || a.ModelId == modelId)).ToList();
+		}
 	}
 }
