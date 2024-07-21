@@ -5,26 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-                Title="Product Window" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+                Title="Product Window" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="586*"/>
+            <ColumnDefinition Width="679*"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Content="Product Management" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" />
-        <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="598,40,0,0" VerticalAlignment="Top" Width="275" FontSize="30"  FontStyle="Italic"/>
-        <Label x:Name="HelloMsgLabel" Content="Hello, Role" HorizontalAlignment="Left" Height="50" Margin="929,6,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" Style="{StaticResource YellowLabelStyle}" HorizontalContentAlignment="Right"/>
+        <Label Content="Product Management" HorizontalAlignment="Left" Height="80" Margin="31,20,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" Grid.ColumnSpan="2" />
+        <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="12,40,0,0" VerticalAlignment="Top" Width="275" FontSize="30"  FontStyle="Italic" Grid.Column="1"/>
+        <Label x:Name="HelloMsgLabel" Content="Hello, Role" HorizontalAlignment="Left" Height="50" Margin="343,6,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontStyle="Italic" Style="{StaticResource YellowLabelStyle}" HorizontalContentAlignment="Right" Grid.Column="1"/>
 
-        <Rectangle HorizontalAlignment="Left" Height="95" Margin="335,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="875" Fill="#1e90ff " RadiusX="10" RadiusY="10" />
+        <Rectangle HorizontalAlignment="Left" Height="95" Margin="335,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="875" Fill="#1e90ff " RadiusX="10" RadiusY="10" Grid.ColumnSpan="2" />
         <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left" Height="50" Margin="40,162,0,0" VerticalAlignment="Top" Width="262" TabIndex="2" />
         <Label Content="Feature Function" HorizontalAlignment="Left" Height="45" Margin="358,167,0,0" VerticalAlignment="Top" Width="152" Foreground="White" RenderTransformOrigin="0.158,0.405"/>
-        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Height="45" Margin="526,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="324" TabIndex="0" />
-        <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="White"/>
-        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
+        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Height="45" Margin="526,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="324" TabIndex="0" Grid.ColumnSpan="2" />
+        <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="319,169,0,0" VerticalAlignment="Top" Width="108" Foreground="White" Grid.Column="1"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="417,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1" Grid.Column="1"/>
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="1064,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" />
-        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="1064,367,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" />
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="1064,444,0,0" VerticalAlignment="Top" Width="124" TabIndex="5" />
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1064,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" />
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="478,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" Grid.Column="1" />
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="478,367,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" Grid.Column="1" />
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="478,444,0,0" VerticalAlignment="Top" Width="124" TabIndex="5" Grid.Column="1" />
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="478,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Grid.Column="1" Click="QuitButton_Click" />
 
-        <DataGrid x:Name="AirCondDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" >
+        <DataGrid x:Name="ItemsDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding ProductId}" />
                 <DataGridTextColumn Header="Name" Width="200" Binding="{Binding ProductName}" />
@@ -33,7 +37,7 @@
                 <DataGridTextColumn Header="Image" Width="100" Binding="{Binding Image}" />
 
                 <DataGridTextColumn Header="Description" Width="70" Binding="{Binding Description}" />
-                <DataGridTextColumn Header="Feature Function" Width="200" Binding="{Binding FeatureFunction}" />
+               
                 <DataGridTextColumn Header="Model" Width="100" Binding="{Binding Model.ModelName}" />
                 <DataGridTextColumn Header="Discount (%)" Width="80" Binding="{Binding Discount.DiscountRate}" />
 
