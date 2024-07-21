@@ -32,7 +32,7 @@ namespace DTO.Repositories
 		public void Delete(Product p)
 		{
 			_context = new();
-			_context.Products.Update(p);
+			_context.Products.Remove(p);
 			_context.SaveChanges();
 		}
 	}

@@ -21,14 +21,14 @@ namespace CarShop
             InitializeComponent();
         }
 
-		private void CreateButton_Click(object sender, RoutedEventArgs e)
-		{
-
-		}
-
 		private void ManageModelsButton_Click(object sender, RoutedEventArgs e)
 		{
 
 		}
-	}
+
+        private void ManageProductsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

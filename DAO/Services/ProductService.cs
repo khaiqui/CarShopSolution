@@ -1,5 +1,6 @@
 ﻿using DTO.Models;
 using DTO.Repositories;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -29,6 +30,26 @@ namespace DAO.Services
 			_repo.Delete(product);
 		}
 
-		//search?
-	}
+        //search?
+        public List<Product> SearchCarByNameAndQuantity(string name, int? quan)
+        {
+            //ko go 2 keyword
+            List<Product> result = _repo.GetList();
+            if (name.IsNullOrEmpty() && !quan.HasValue)
+            {
+                return result;
+            }
+            if (!name.IsNullOrEmpty())
+            {
+                result = result.Where(x => x.ProductName.ToLower().Contains(name.ToLower())).ToList();
+            }
+            if (quan.HasValue)
+            {
+                result = result.Where(x => x.Quantity == quan).ToList();
+            }
+
+            return result;
+        }
+
+    }
 }
