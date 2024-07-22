@@ -35,10 +35,6 @@ namespace CarShop
 			Application.Current.Shutdown();
 		}
 
-		private void Window_Loaded(object sender, RoutedEventArgs e)
-		{
-			LoadDateGrid();
-		}
 
 		private void LoadDateGrid()
 		{
@@ -104,5 +100,10 @@ namespace CarShop
 			detail.ShowDialog();
 			LoadDateGrid();
 		}
-	}
+
+		private void Window_Loaded_1(object sender, RoutedEventArgs e)
+		{
+			LoadDateGrid();
+		}
+    }
 }

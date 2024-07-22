@@ -11,7 +11,7 @@
         <Label Content="Tofu Shop" HorizontalAlignment="Left" Height="80" Margin="537,41,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" />
         <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="1069,50,0,0" VerticalAlignment="Top" Width="276" FontSize="30"  FontStyle="Italic"/>
 
-        <Button x:Name="ManageAccountsButton" Content="Manage Accounts" HorizontalAlignment="Left" Height="50" Margin="91,161,0,0" VerticalAlignment="Top" Width="247" TabIndex="3"/>
+        <Button x:Name="ManageAccountsButton" Content="Manage Accounts" HorizontalAlignment="Left" Height="50" Margin="91,161,0,0" VerticalAlignment="Top" Width="247" TabIndex="3" Click="ManageAccountsButton_Click"/>
         <Button x:Name="ManageProductsButton" Content="Manage Products" HorizontalAlignment="Left" Height="50" Margin="384,234,0,0" VerticalAlignment="Top" Width="248" TabIndex="4" Click="ManageProductsButton_Click" />
         <Button x:Name="ManageModelsButton" Content="Manage Models" HorizontalAlignment="Left" Height="50" Margin="983,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" Click="ManageModelsButton_Click" />
         <Button x:Name="ManageDiscountsButton" Content="Manage Discounts" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="247" TabIndex="5" Margin="685,234,0,0" />

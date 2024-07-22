@@ -34,13 +34,17 @@ namespace CarShop
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			CreateUpdateLabel.Content = "Create a New Account";
+			UserIdTextBox.IsEnabled = false;
 
 			if (SelectedUser != null)
 			{
 				CreateUpdateLabel.Content = "Update a Selected Account Info";
 
-				UserIdTextBox.Text = SelectedUser.UserId.ToString();
-				UserIdTextBox.IsEnabled = false;
+				if(SelectedUser != null)
+				{
+					UserIdTextBox.Text = SelectedUser.UserId.ToString();
+				}
+				
 
 				NameTextBox1.Text = SelectedUser.Name;
 				UsernameTextBox.Text = SelectedUser.Username;
@@ -50,7 +54,6 @@ namespace CarShop
 				AddressTextBox.Text = SelectedUser.Address;
 				RollTextBox.Text = SelectedUser.Role;
 
-				//QUAN TRỌNG: ĐỪNG QUÊN JUMP NHẢY ĐẾN ĐÚNG CÁI CATEGORY MÀ CUỐN SÁCH ĐANG THUỘC VÊ
 			}
 		}
 
@@ -58,7 +61,10 @@ namespace CarShop
 		{
 
 			User x = new();
-			x.UserId = int.Parse(UserIdTextBox.Text);
+			if(SelectedUser != null)
+			{
+				x.UserId = int.Parse(UserIdTextBox.Text);
+			}
 			x.Name = NameTextBox1.Text;
 			x.Username = UsernameTextBox.Text;
 			x.Password = PasswordTextBox.Text;

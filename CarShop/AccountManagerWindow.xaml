@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-                    Title="Account Management" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+                    Title="Account Management" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded_1" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="586*"/>

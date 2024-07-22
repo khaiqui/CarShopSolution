@@ -50,5 +50,10 @@ namespace CarShop
         {
             Application.Current.Shutdown();
         }
-    }
+
+		private void ManageAccountsButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }
