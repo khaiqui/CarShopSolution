@@ -1,4 +1,5 @@
 ﻿using DTO.Models;
+using Microsoft.Identity.Client.NativeInterop;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,8 +31,12 @@ namespace CarShop
 
         private void ManageProductsButton_Click(object sender, RoutedEventArgs e)
         {
+            ProductsManagerWindow productsManagerWindow = new ProductsManagerWindow();
+            productsManagerWindow.ShowDialog();
+
 
         }
+
 
         private void BuyProductsButton_Copy_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +53,38 @@ namespace CarShop
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
+        }
+
+        private void ManageAccountsButton_Click(object sender, RoutedEventArgs e)
+        {
+            AccountManagerWindow accountManagerWindow = new AccountManagerWindow();
+            accountManagerWindow.User = User;
+            accountManagerWindow.ShowDialog();
+        }
+
+        private void ManageOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (User.Role != "Admin")
+            {
+                ManageAccountsButton.IsEnabled = false;
+            }
+            if (User.Role != "Staff")
+            {
+                ManageOrderButton.IsEnabled = false;
+                ManageProductsButton.IsEnabled = false;
+                ManageDiscountsButton.IsEnabled = false;
+                ManageModelsButton.IsEnabled = false;
+            }
+            if (User.Role != "Customer")
+            {
+                GoToProductsButton.IsEnabled = false;
+            }
         }
     }
 }

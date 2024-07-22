@@ -26,6 +26,6 @@
         <ComboBox x:Name="DiscountComboBox" HorizontalAlignment="Left" Height="44" Margin="206,551,0,0" VerticalAlignment="Top" Width="266"/>
         <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="44" Margin="626,481,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
         <Label Content="Price" HorizontalAlignment="Left" Height="46" Margin="524,481,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
-
+       
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using DAO.Services;
 using DTO.Models;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,12 +32,27 @@ namespace CarShop
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
+            Product productSelected = CarDataGrid.SelectedItem as Product;
 
+            if (productSelected == null)
+            {
+                MessageBox.Show("Nothing", "Failed", MessageBoxButton.OK);
+                return;
+            }
+
+            MessageBox.Show("Buy Successfully", "Successful");
+
+            productSelected.Quantity = productSelected.Quantity - 1;
+
+            productService.UpdateOne(productSelected);
+
+            LoadDataGrid();
         }
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductDetailsWindow main = new();
+            main.Show();
         }
 
         private void BackToMainButton_Click(object sender, RoutedEventArgs e)
@@ -72,7 +88,25 @@ namespace CarShop
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            int? quan = null;
+            int tmpQuan;
+            bool quanStatus = int.TryParse(QuantityTextBox.Text, out tmpQuan);
+            if (!quanStatus && !QuantityTextBox.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Incorrect quantity. Please type an integer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            else if (quanStatus == true)
+            {
+                quan = tmpQuan;
+            }
 
+
+            var result = productService.SearchCarByNameAndQuantity(CarNameTextBox.Text, quan);
+
+            //do kq search vao grid
+            CarDataGrid.ItemsSource = null;
+            CarDataGrid   .ItemsSource = result;
         }
     }
 }

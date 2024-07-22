@@ -23,7 +23,7 @@ namespace CarShop
 	{
 		private DAO.Services.UserService _service = new();
 
-		//public User Account { get; set; }
+		public User User { get; set; }
 
 		public AccountManagerWindow()
 		{
@@ -32,12 +32,7 @@ namespace CarShop
 
 		private void QuitButton_Click(object sender, RoutedEventArgs e)
 		{
-			Application.Current.Shutdown();
-		}
-
-		private void Window_Loaded(object sender, RoutedEventArgs e)
-		{
-			LoadDateGrid();
+			this.Close();
 		}
 
 		private void LoadDateGrid()
@@ -104,5 +99,10 @@ namespace CarShop
 			detail.ShowDialog();
 			LoadDateGrid();
 		}
-	}
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            LoadDateGrid();
+        }
+    }
 }

@@ -16,17 +16,17 @@ namespace DTO.Repositories
 			return _context.Discounts.ToList();
 		}
 
-		public void Create(Product x)
+		public void Create(Discount x)
 		{
 			_context = new();
-			_context.Products.Add(x);
+			_context.Discounts.Add(x);
 			_context.SaveChanges();
 		}
 
-		public void Update(Product x)
+		public void Update(Discount x)
 		{
 			_context = new();
-			_context.Products.Update(x);
+			_context.Discounts.Update(x);
 			_context.SaveChanges();
 		}
 	}

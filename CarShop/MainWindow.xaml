@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-            Title="Product Window" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+            Title="Product Window" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" >
     <Grid>
 
         <Label Content="Tofu Shop" HorizontalAlignment="Left" Height="80" Margin="537,41,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" FontStyle="Italic" />
         <Label Content="ver. 24-SU" HorizontalAlignment="Left" Height="50" Margin="1069,50,0,0" VerticalAlignment="Top" Width="276" FontSize="30"  FontStyle="Italic"/>
 
-        <Button x:Name="ManageAccountsButton" Content="Manage Accounts" HorizontalAlignment="Left" Height="50" Margin="91,161,0,0" VerticalAlignment="Top" Width="247" TabIndex="3"/>
+        <Button x:Name="ManageAccountsButton" Content="Manage Accounts" HorizontalAlignment="Left" Height="50" Margin="91,161,0,0" VerticalAlignment="Top" Width="247" TabIndex="3" Click="ManageAccountsButton_Click"/>
         <Button x:Name="ManageProductsButton" Content="Manage Products" HorizontalAlignment="Left" Height="50" Margin="384,234,0,0" VerticalAlignment="Top" Width="248" TabIndex="4" Click="ManageProductsButton_Click" />
         <Button x:Name="ManageModelsButton" Content="Manage Models" HorizontalAlignment="Left" Height="50" Margin="983,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" Click="ManageModelsButton_Click" />
         <Button x:Name="ManageDiscountsButton" Content="Manage Discounts" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="247" TabIndex="5" Margin="685,234,0,0" />
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="91,407,0,0" VerticalAlignment="Top" Width="247" TabIndex="6" Click="QuitButton_Click" />
         <Button x:Name="GoToProductsButton" Content="Product List" HorizontalAlignment="Left" Height="50" Margin="91,0,0,0" VerticalAlignment="Center" Width="247" TabIndex="4" Click="GoToProductsButton_Click" />
-        <Button x:Name="ManageOrderButton" Content="Manage Orders" HorizontalAlignment="Left" Height="50" Margin="92,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" />
+        <Button x:Name="ManageOrderButton" Content="Manage Orders" HorizontalAlignment="Left" Height="50" Margin="92,234,0,0" VerticalAlignment="Top" Width="246" TabIndex="5" Click="ManageOrderButton_Click" />
 
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAO.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,30 @@ namespace CarShop
     /// </summary>
     public partial class ProductDetailsWindow : Window
     {
+        private ProductService productService = new();
         public ProductDetailsWindow()
         {
             InitializeComponent();
+            string imageUrl = "https://i.imgur.com/mlTNCv3.jpeg";
+
+
+            SetImageFromUrl(imageUrl);
+        }
+        private void SetImageFromUrl(string url)
+        {
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(url, UriKind.Absolute);
+                bitmap.EndInit();
+
+                Image.Source = bitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred when loading image: {ex.Message}");
+            }
         }
     }
 }

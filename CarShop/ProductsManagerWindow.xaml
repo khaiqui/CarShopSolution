@@ -19,11 +19,13 @@
         <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="White"/>
         <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
 
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="1064,294,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" Click="CreateButton_Click" />
-        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="1064,367,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" Click="UpdateButton_Click" />
-        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="1064,444,0,0" VerticalAlignment="Top" Width="124" TabIndex="5" Click="DeleteButton_Click" />
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1064,540,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Click="QuitButton_Click" />
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="47" Margin="1047,276,0,0" VerticalAlignment="Top" Width="163" TabIndex="3" Click="CreateButton_Click" />
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="1047,335,0,0" VerticalAlignment="Top" Width="163" TabIndex="4" Click="UpdateButton_Click" />
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Height="50" Margin="1047,394,0,0" VerticalAlignment="Top" Width="163" TabIndex="5" Click="DeleteButton_Click" RenderTransformOrigin="0.477,-0.247" />
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1064,590,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Click="QuitButton_Click" />
 
+        <Button Content="Add List By File" Click="AddListByFileButton_Click" Height="50" Margin="1047,458,60,0" VerticalAlignment="Top" TabIndex="6"/>
+        <Button Content="Export" Click="ExportButton_Click" Height="48" Margin="1047,523,60,0" VerticalAlignment="Top" TabIndex="6"/>
         <DataGrid x:Name="ProductDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding ProductId}" />

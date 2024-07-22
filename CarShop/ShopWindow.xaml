@@ -14,8 +14,8 @@
 
         <Rectangle HorizontalAlignment="Left" Height="95" Margin="335,140,0,0" Stroke="Black" VerticalAlignment="Top" Width="875" Fill="#1e90ff " RadiusX="10" RadiusY="10" />
         <Button x:Name="SearchButton" Content="Search Product" HorizontalAlignment="Left" Height="50" Margin="40,162,0,0" VerticalAlignment="Top" Width="262" TabIndex="2" Click="SearchButton_Click" />
-        <Label Content="Feature Function" HorizontalAlignment="Left" Height="45" Margin="358,167,0,0" VerticalAlignment="Top" Width="152" Foreground="White" RenderTransformOrigin="0.158,0.405"/>
-        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Height="45" Margin="526,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="324" TabIndex="0" />
+        <Label Content="Car Name" HorizontalAlignment="Left" Height="45" Margin="358,167,0,0" VerticalAlignment="Top" Width="152" Foreground="White" RenderTransformOrigin="0.158,0.405"/>
+        <TextBox x:Name="CarNameTextBox" HorizontalAlignment="Left" Height="45" Margin="526,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="324" TabIndex="0" />
         <Label Content="Quantity" HorizontalAlignment="Left" Height="45" Margin="905,169,0,0" VerticalAlignment="Top" Width="108" Foreground="White"/>
         <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="45" Margin="1003,165,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="185" TabIndex="1"/>
 

@@ -16,12 +16,12 @@ namespace DAO.Services
 			return _repo.GetAll();
 		}
 
-		public void Create01(Product x)
+		public void Create01(Model x)
 		{
 			_repo.Create(x);
 		}
 
-		public void Update01(Product x)
+		public void Update01(Model x)
 		{
 			_repo.Update(x);
 		}

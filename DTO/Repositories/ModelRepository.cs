@@ -16,17 +16,17 @@ namespace DTO.Repositories
 			return _context.Models.ToList();
 		}
 
-		public void Create(Product x)
+		public void Create(Model x)
 		{
 			_context = new();
-			_context.Products.Add(x);
+			_context.Models.Add(x);
 			_context.SaveChanges();
 		}
 
-		public void Update(Product x)
+		public void Update(Model x)
 		{
 			_context = new();
-			_context.Products.Update(x);
+			_context.Models.Update(x);
 			_context.SaveChanges();
 		}
 	}

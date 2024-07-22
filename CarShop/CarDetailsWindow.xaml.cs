@@ -22,6 +22,8 @@ namespace CarShop
     public partial class CarDetailsWindow : Window
     {
         private ProductService _service = new();
+        private ModelService _modelService = new();
+        private DiscountService _discountService = new();
         public Product SelectedCar { get; set; } = null;
         public CarDetailsWindow()
         {
@@ -30,6 +32,15 @@ namespace CarShop
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            ModelComboBox.ItemsSource = _modelService.GetAllModels();
+            DiscountComboBox.ItemsSource = _discountService.GetAllDiscount();
+
+            ModelComboBox.DisplayMemberPath = "ModelName";
+            ModelComboBox.SelectedValuePath = "ModelId";
+
+            DiscountComboBox.DisplayMemberPath = "DiscountRate";
+            DiscountComboBox.SelectedValuePath = "DiscountId";
+
             ProductIdTextBox.IsEnabled = false;
             CarModelLabel.Content = "Create a new car";
             if (SelectedCar != null)
@@ -40,6 +51,10 @@ namespace CarShop
                 PriceTextBox.Text = SelectedCar.Price.ToString();
                 DescriptionTexBox.Text = SelectedCar.ToString();
                 QuantityTextBox.Text = SelectedCar.Quantity.ToString();
+
+                ModelComboBox.SelectedValue = SelectedCar.ModelId;
+                DiscountComboBox.SelectedValue = SelectedCar.DiscountId;
+               
             }
         }
 
@@ -55,6 +70,11 @@ namespace CarShop
 
 
             x.Quantity = int.Parse(QuantityTextBox.Text);
+
+            x.ModelId = int.Parse(ModelComboBox.SelectedValue.ToString());
+            x.DiscountId = int.Parse(DiscountComboBox.SelectedValue.ToString());
+
+
 
             if (SelectedCar == null)
             {
