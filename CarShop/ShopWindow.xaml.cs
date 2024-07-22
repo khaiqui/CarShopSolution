@@ -36,7 +36,9 @@ namespace CarShop
 
         private void ViewButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductDetailsWindow main = new();
+            main.Show();
+            this.Hide();
         }
 
         private void BackToMainButton_Click(object sender, RoutedEventArgs e)

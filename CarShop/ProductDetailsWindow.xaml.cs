@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAO.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,9 @@ namespace CarShop
     /// <summary>
     /// Interaction logic for ProductDetailsWindow.xaml
     /// </summary>
-    public partial class ProductDetailsWindow : Window
-    {
+        public partial class ProductDetailsWindow : Window       
+        {
+        private ProductService productService = new();
         public ProductDetailsWindow()
         {
             InitializeComponent();

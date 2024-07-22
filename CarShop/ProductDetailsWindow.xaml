@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CarShop.ProductDetailsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Product Details" Height="500" Width="600">
+        Title="Product Details" Height="500" Width="600" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="20">
             <TextBlock Text="Product Details" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
