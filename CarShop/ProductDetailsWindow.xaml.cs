@@ -24,9 +24,7 @@ namespace CarShop
         public ProductDetailsWindow()
         {
             InitializeComponent();
-            string imageUrl = "http://example.com/image.jpg";
-
-            
+            string imageUrl = "https://i.imgur.com/mlTNCv3.jpeg";           
             SetImageFromUrl(imageUrl);
         }
         private void SetImageFromUrl(string url)

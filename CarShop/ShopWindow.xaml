@@ -31,7 +31,6 @@
                 <DataGridTextColumn Header="Price" Width="70" Binding="{Binding Price}" />
                 <DataGridTextColumn Header="Quantity" Width="70" Binding="{Binding Quantity}" />
                 <DataGridTextColumn Header="Image" Width="100" Binding="{Binding Image}" />
-
                 <DataGridTextColumn Header="Description" Width="310" Binding="{Binding Description}" />
                 <!--feature không có cái gì nên tạm ẩn nó đi-->
                 <!--<DataGridTextColumn Header="Feature Function" Width="200" Binding="{Binding FeatureFunction}" />-->
