@@ -7,15 +7,15 @@
             <TextBlock Text="Product Details" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
             <Image x:Name="Image" Source="{Binding Image}" Height="200" Margin="0,0,0,20"/>
             <TextBlock Text="{Binding ProductName}" FontSize="18" FontWeight="Bold"/>
-            <TextBlock Text="Price:" FontWeight="Bold"/>
+                <TextBlock Text="Price:" FontWeight="Bold"/>
             <TextBlock Text="{Binding Price, StringFormat=C}" />
-            <TextBlock Text="Description:" FontWeight="Bold"/>
+                <TextBlock Text="Description:" FontWeight="Bold"/>
             <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
-            <TextBlock Text="Model:" FontWeight="Bold"/>
+                <TextBlock Text="Model:" FontWeight="Bold"/>
             <TextBlock Text="{Binding ModelName}" />
-            <TextBlock Text="Quantity:" FontWeight="Bold"/>
+                <TextBlock Text="Quantity:" FontWeight="Bold"/>
             <TextBlock Text="{Binding Quantity}" />
-            <TextBlock Text="Discounted Price:" FontWeight="Bold"/>
+                <TextBlock Text="Discounted Price:" FontWeight="Bold"/>
             <TextBlock Text="{Binding DiscountedPrice, StringFormat=C}" />
 
         </StackPanel>
