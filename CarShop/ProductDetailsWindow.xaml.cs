@@ -24,6 +24,28 @@ namespace CarShop
         public ProductDetailsWindow()
         {
             InitializeComponent();
+            string imageUrl = "http://example.com/image.jpg";
+
+            
+            SetImageFromUrl(imageUrl);
         }
+        private void SetImageFromUrl(string url)
+        {
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(url, UriKind.Absolute);
+                bitmap.EndInit();
+
+                Image.Source = bitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred when loading image: {ex.Message}");
+            }
+        }
+
+
     }
 }
