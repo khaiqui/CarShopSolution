@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Register Window" Height="500" Width="800" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -13,31 +13,31 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.5*" />
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Width="300">
-            <TextBlock Text="Name" Margin="0,0,0,5"/>
-            <TextBox Name="nameTextBox" Margin="0,0,0,20"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Width="450">
+            <TextBlock Text="Username" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox Name="usernameTextBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
 
-            <TextBlock Text="Email" Margin="0,0,0,5"/>
-            <TextBox Name="emailTextBox" Margin="0,0,0,20"/>
+            <TextBlock Text="Password" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <PasswordBox Name="passwordBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
+            <TextBlock Text="Name" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox Name="nameTextBox" Margin="0,0,0,20" Height="30" FontSize="15" />
 
-            <TextBlock Text="Address" Margin="0,0,0,5"/>
-            <TextBox Name="addressTextBox" Margin="0,0,0,20"/>
+            <TextBlock Text="Email" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox Name="emailTextBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
 
-            <TextBlock Text="Phone" Margin="0,0,0,5"/>
-            <TextBox Name="phoneTextBox" Margin="0,0,0,20"/>
+            <TextBlock Text="Phone" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox Name="phoneTextBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
 
-            <TextBlock Text="Username" Margin="0,0,0,5"/>
-            <TextBox Name="usernameTextBox" Margin="0,0,0,20"/>
-
-            <TextBlock Text="Password" Margin="0,0,0,5"/>
-            <PasswordBox Name="passwordBox" Margin="0,0,0,20"/>
+            <TextBlock Text="Address" Margin="0,0,0,5" FontSize="15" Foreground="Blue" FontWeight="Bold"/>
+            <TextBox Name="addressTextBox" Margin="0,0,0,20" Height="30" FontSize="15"/>
         </StackPanel>
-        <Button Content="Register" Width="100" HorizontalAlignment="Left" Click="RegisterButton_Click" Grid.Column="1" Margin="174,350,0,14" Grid.Row="1"/>
-        <Button Content="Back to Login" Width="100" HorizontalAlignment="Left" Margin="31,350,0,14" Click="BackToLoginButton_Click" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.693,0.524"/>
+        <Button Content="Register" Width="158" HorizontalAlignment="Center" Click="RegisterButton_Click" Grid.Column="2" Margin="0,291,0,113" Grid.Row="1"/>
+        <Button Content="Back to Login" Width="158" HorizontalAlignment="Center" Margin="0,225,0,177" Click="BackToLoginButton_Click" Grid.Column="2" Grid.Row="1" RenderTransformOrigin="0.693,0.524"/>
+        <Button Content="Quit" Width="158" HorizontalAlignment="Center"  Grid.Column="2" Margin="0,359,0,46" Grid.Row="1" Click="Button_Click"/>
     </Grid>
 </Window>

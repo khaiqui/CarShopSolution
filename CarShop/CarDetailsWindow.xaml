@@ -5,27 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarShop"
         mc:Ignorable="d"
-        Title="CarDetailsWindow" Height="750" Width="1145" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="CarDetailsWindow" Height="685" Width="1265" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"  Loaded="Window_Loaded">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="593" Margin="10,131,0,0" Stroke="Black" VerticalAlignment="Top" Width="919" Fill="#1e90ff " RadiusX="10" RadiusY="10" />
-        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Height="42" Margin="998,159,0,0" VerticalAlignment="Top" Width="101" Click="SaveButton_Click"/>
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="42" Margin="998,240,0,0" VerticalAlignment="Top" Width="101" Click="QuitButton_Click"/>
-        <Label x:Name="CarModelLabel" Content="Create/Update Car" HorizontalAlignment="Left" Height="63" Margin="34,30,0,0" VerticalAlignment="Top" Width="653" FontSize="25"/>
-        <Label Content="Description" HorizontalAlignment="Left" Height="46" Margin="34,0,0,0" VerticalAlignment="Center" Width="112" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="CarID" HorizontalAlignment="Left" Height="45" Margin="34,193,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="Car Name" HorizontalAlignment="Left" Height="44" Margin="34,260,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="Image" HorizontalAlignment="Center" Height="44" Margin="0,191,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="Model" HorizontalAlignment="Left" Height="46" Margin="494,634,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="Discount" HorizontalAlignment="Left" Height="46" Margin="41,635,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.475,0.076"/>
-        <Label Content="Quantity" HorizontalAlignment="Left" Height="46" Margin="41,562,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox x:Name="ProductIdTextBox" HorizontalAlignment="Left" Height="45" Margin="151,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267" TabIndex="0"/>
-        <TextBox x:Name="ProductNameTextBox" HorizontalAlignment="Left" Height="44" Margin="151,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267" TabIndex="0"/>
-        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="44" Margin="151,560,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267" TabIndex="0"/>
-        <TextBox x:Name="DescriptionTexBox" HorizontalAlignment="Left" Height="185" Margin="151,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="686" TabIndex="0"/>
-        <ComboBox x:Name="ModelComboBox" HorizontalAlignment="Left" Height="41" Margin="594,624,0,0" VerticalAlignment="Top" Width="220"/>
-        <ComboBox x:Name="DiscountComboBox" HorizontalAlignment="Left" Height="41" Margin="151,619,0,0" VerticalAlignment="Top" Width="220"/>
-        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="44" Margin="594,560,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
-        <Label Content="Price" HorizontalAlignment="Left" Height="46" Margin="494,562,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="CarModelLabel" Content="Create | Update Car" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="50" Margin="67,0,0,0"  />
+        <Rectangle HorizontalAlignment="Left" Height="550" Margin="64,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="920" Fill="#1e90ff " RadiusX="10" RadiusY="10" />
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Height="50" Margin="1074,93,0,0" VerticalAlignment="Top" Width="132" Click="SaveButton_Click"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="1074,175,0,0" VerticalAlignment="Top" Width="132" Click="QuitButton_Click"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="46" Margin="88,276,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="ID" HorizontalAlignment="Left" Height="45" Margin="88,128,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="Name" HorizontalAlignment="Left" Height="44" Margin="88,200,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="Image" HorizontalAlignment="Left" Height="44" Margin="524,134,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="Model" HorizontalAlignment="Left" Height="46" Margin="524,551,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="Discount" HorizontalAlignment="Left" Height="46" Margin="88,551,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="0.475,0.076" Foreground="White"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Height="46" Margin="88,481,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
+        <TextBox x:Name="ProductIdTextBox" HorizontalAlignment="Left" Height="45" Margin="206,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
+        <TextBox x:Name="ProductNameTextBox" HorizontalAlignment="Left" Height="44" Margin="206,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Height="44" Margin="206,484,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
+        <TextBox x:Name="DescriptionTexBox" HorizontalAlignment="Left" Height="184" Margin="206,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="686" TabIndex="0"/>
+        <ComboBox x:Name="ModelComboBox" HorizontalAlignment="Left" Height="46" Margin="626,551,0,0" VerticalAlignment="Top" Width="266"/>
+        <ComboBox x:Name="DiscountComboBox" HorizontalAlignment="Left" Height="44" Margin="206,551,0,0" VerticalAlignment="Top" Width="266"/>
+        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Left" Height="44" Margin="626,481,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" TabIndex="0"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="46" Margin="524,481,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.5,0.5" Foreground="White"/>
 
     </Grid>
 </Window>

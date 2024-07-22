@@ -73,5 +73,10 @@ namespace CarShop
             registerWindow.Show();
             this.Hide();
         }
-    }
+
+		private void Window_Loaded(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }
