@@ -32,8 +32,9 @@
                 <DataGridTextColumn Header="Quantity" Width="70" Binding="{Binding Quantity}" />
                 <DataGridTextColumn Header="Image" Width="100" Binding="{Binding Image}" />
 
-                <DataGridTextColumn Header="Description" Width="70" Binding="{Binding Description}" />
-                <DataGridTextColumn Header="Feature Function" Width="200" Binding="{Binding FeatureFunction}" />
+                <DataGridTextColumn Header="Description" Width="310" Binding="{Binding Description}" />
+                <!--feature không có cái gì nên tạm ẩn nó đi-->
+                <!--<DataGridTextColumn Header="Feature Function" Width="200" Binding="{Binding FeatureFunction}" />-->
                 <DataGridTextColumn Header="Model" Width="100" Binding="{Binding Model.ModelName}" />
                 <DataGridTextColumn Header="Discount (%)" Width="80" Binding="{Binding Discount.DiscountRate}" />
 
