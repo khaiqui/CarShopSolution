@@ -1,5 +1,6 @@
 ﻿using DTO.Models;
 using DTO.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,19 @@ namespace DAO.Services
 			return _repo.GetAll();
 		}
 
-		public void Create01(Product x)
+		public void Create(Model x)
 		{
 			_repo.Create(x);
 		}
 
-		public void Update01(Product x)
+		public void Update(Model x)
 		{
 			_repo.Update(x);
+		}
+		public List<Model> SearchByName(string name)
+		{
+			name = name.ToLower();
+			return _repo.GetAll().Where(m => m.ModelName.ToLower().Contains(name)).ToList();
 		}
 	}
 }

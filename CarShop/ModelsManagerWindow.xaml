@@ -1,0 +1,32 @@
+﻿<Window x:Class="CarShop.ModelsManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarShop"
+        mc:Ignorable="d"
+                    Title="Model Window" Height="500" Width="800" Background="#b8edff" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontSize="18" Loaded="Window_Loaded" >
+    <Grid Height="517" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="541*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Model Management" HorizontalAlignment="Left" Height="80" Margin="42,0,0,0" VerticalAlignment="Top" Width="569" FontWeight="Heavy" FontSize="40" FontStyle="Italic" />
+        <Button x:Name="SearchButton" Content="Search Name" HorizontalAlignment="Left" Height="50" Margin="42,71,0,0" VerticalAlignment="Top" Width="161" TabIndex="2" Click="SearchButton_Click" />
+        <TextBox x:Name="ModelNameTextBox" HorizontalAlignment="Left" Height="50" Margin="189,71,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="386" TabIndex="0" />
+
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Height="50" Margin="632,70,0,0" VerticalAlignment="Top" Width="124" TabIndex="3" Click="CreateButton_Click" />
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Height="50" Margin="632,143,0,0" VerticalAlignment="Top" Width="124" TabIndex="4" Click="UpdateButton_Click"  />
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="632,383,0,0" VerticalAlignment="Top" Width="124" TabIndex="6" Click="QuitButton_Click"  />
+
+        <DataGrid x:Name="ModelDataGrid" HorizontalAlignment="Left" Height="290" Margin="43,143,0,0" VerticalAlignment="Top" Width="532" AutoGenerateColumns="False" TabIndex="7" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="100" Binding="{Binding ModelId}" />
+                <DataGridTextColumn Header="Name" Width="427" Binding="{Binding ModelName}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
