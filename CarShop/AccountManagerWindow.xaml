@@ -30,9 +30,9 @@
         <DataGrid x:Name="AdminDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="973" AutoGenerateColumns="False" TabIndex="7" Grid.ColumnSpan="2" SelectionChanged="AdminDataGrid_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding UserId}" />
-                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Email" Width="100" Binding="{Binding Email}" />
-                <DataGridTextColumn Header="Adress" Width="150" Binding="{Binding Address}" />
+                <DataGridTextColumn Header="Name" Width="150" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Email" Width="150" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Adress" Width="170" Binding="{Binding Address}" />
                 <DataGridTextColumn Header="Phone" Width="100" Binding="{Binding Phone}" />
                 <DataGridTextColumn Header="Username" Width="120" Binding="{Binding Username}" />
                 <DataGridTextColumn Header="Password" Width="100" Binding="{Binding Password}" />

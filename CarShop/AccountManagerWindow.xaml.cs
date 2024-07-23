@@ -84,7 +84,7 @@ namespace CarShop
 
 			if (selected == null)
 			{
-				MessageBox.Show("Please select a account before updating", "Select one", MessageBoxButton.OK, MessageBoxImage.Stop);
+				MessageBox.Show("Vui lòng chọn một tài khoản để nâng cấp", "Select one", MessageBoxButton.OK, MessageBoxImage.Stop);
 				return;
 			}
 
